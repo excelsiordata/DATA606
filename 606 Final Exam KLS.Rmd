@@ -1,0 +1,333 @@
+---
+title: "606 Final Exam KLS"
+output:
+  html_document: default
+  pdf_document: default
+---
+##Part I
+  
+####1. B
+
+####2. A
+
+####3. D
+
+####4. C 
+
+####5. A
+
+####6. D
+
+####7.
+  a.  
+    A is positively skewed, with a center around 5. It is not widely distributed; i.e. the spread is small.  
+    B is normally distributed, but is very widely distributed. The center is still around 5.  
+  
+  b.  
+    As sample size decreases, the spread of the distribution increases. This is why the standard deviations are different, but the means are the same. The larger the sample, the closer we will get to approaching the population mean, and the smaller the spread will be. Therefore, the smaller the standard deviation will be.  
+  
+  c.  
+    The statistical theory that describes this phenomenon is the central limit theorem, or CLT. The CLT states that given a sufficiently large sample size, the mean of the sample will approximately equal that of the population.   
+
+##Part II
+```{r}
+#Part II
+#load the data
+options(digits=2)
+data1 <- data.frame(x=c(10,8,13,9,11,14,6,4,12,7,5),
+                    y=c(8.04,6.95,7.58,8.81,8.33,9.96,7.24,4.26,10.84,4.82,5.68))
+data2 <- data.frame(x=c(10,8,13,9,11,14,6,4,12,7,5),
+                    y=c(9.14,8.14,8.74,8.77,9.26,8.1,6.13,3.1,9.13,7.26,4.74))
+data3 <- data.frame(x=c(10,8,13,9,11,14,6,4,12,7,5),
+                    y=c(7.46,6.77,12.74,7.11,7.81,8.84,6.08,5.39,8.15,6.42,5.73))
+data4 <- data.frame(x=c(8,8,8,8,8,8,8,19,8,8,8),
+                    y=c(6.58,5.76,7.71,8.84,8.47,7.04,5.25,12.5,5.56,7.91,6.89))
+#mean and median for 1
+summary(data1$x)
+summary(data1$y)
+
+#standard deviation for 1
+sd(data1$x)
+sd(data1$y)
+
+#mean and median for 2
+summary(data2$x)
+summary(data2$y)
+
+#standard deviation for 2
+sd(data2$x)
+sd(data2$y)
+
+#mean and median for 3
+summary(data3$x)
+summary(data3$y)
+
+#standard deviation for 3
+sd(data3$x)
+sd(data3$y)
+
+#mean and median for 4
+summary(data4$x)
+summary(data4$y)
+
+#standard deviation for 4
+sd(data4$x)
+sd(data4$y)
+
+#correlation for 1
+cor(data1$x, data1$y)
+
+#correlation for 2
+cor(data2$x, data2$y)
+
+#correlation for 3
+cor(data3$x, data3$y)
+
+#correlation for 4
+cor(data4$x, data4$y)
+
+#linear regression equation for 1
+data1c <- lm(x ~ y, data = data1)
+summary(data1c)
+
+#linear regression equation for 2
+data2c <- lm(x ~ y, data = data2)
+summary(data2c)
+
+#linear regression equation for 3
+data3c <- lm(x ~ y, data = data3)
+summary(data3c)
+
+
+#linear regression equation for 4
+data4c <- lm(x ~ y, data = data4)
+summary(data4c)
+```
+
+##Data 1
+  
+####Mean:
+
+\[
+  \mu_x = 9.0
+\]
+
+\[
+  \mu_y = 7.5
+\]
+
+####Median:
+
+\[
+  M_x = 9.0
+\]
+
+\[
+  M_y = 7.6
+\]
+
+####Standard Deviation:
+
+\[
+  \sigma_x = 3.3
+\]
+
+\[
+  \sigma_y = 2.0
+\]
+
+####Correlation:
+
+\[
+  0.82
+\]
+
+####Linear Regression Equation:
+
+\[
+  \hat{y}(1) = -0.998 + 1.333 * y
+\]
+
+####R-squared:
+
+\[
+  R^2 = 0.667
+\]
+  
+##Data 2
+  
+###Mean:
+
+\[
+  \mu_x = 9.0
+\]
+
+\[
+  \mu_y = 7.5
+\]
+
+####Median:
+
+\[
+  M_x = 9.0
+\]
+
+\[
+  M_y = 8.1
+\]
+
+####Standard Deviation:
+
+\[
+  \sigma_x = 3.3
+\]
+
+\[
+  \sigma_y = 2.0
+\]
+
+####Correlation:
+
+\[
+  0.82
+\]
+
+####Linear Regression Equation:
+
+\[
+  \hat{y}(2) = -0.995 + 1.332 * y
+\]
+
+####R-squared:
+
+\[
+  R^2 = 0.666
+\]
+  
+##Data 3
+  
+####Mean:
+
+\[
+  \mu_x = 9.0
+\]
+
+\[
+  \mu_y = 7.5
+\]
+
+####Median:
+
+\[
+  M_x = 9.0
+\]
+
+\[
+  M_y = 7.1
+\]
+
+####Standard Deviation:
+
+\[
+  \sigma_x = 3.3
+\]
+
+\[
+  \sigma_y = 2.0
+\]
+
+####Correlation:
+
+\[
+  0.82
+\]
+
+####Linear Regression Equation:
+
+\[
+  \hat{y}(3) = -1.000 + 1.333 * y
+\]
+
+####R-squared:
+
+\[
+  R^2 = 0.666
+\]
+  
+##Data 4
+  
+####Mean:
+
+\[
+  \mu_x = 9.0
+\]
+
+\[
+  \mu_y = 7.5
+\]
+
+####Median:
+
+\[
+  M_x = 8.0
+\]
+
+\[
+  M_y = 7.0
+\]
+
+####Standard Deviation:
+
+\[
+  \sigma_x = 3.3
+\]
+
+\[
+  \sigma_y = 2.0
+\]
+
+####Correlation:
+
+\[
+  0.82
+\]
+
+####Linear Regression Equation:
+
+\[
+  \hat{y}(4) = -1.004 + 1.334 * y
+\]
+
+####R-squared:
+
+\[
+  R^2 = 0.667
+\]
+
+```{r}
+plot(data1$x ~ data1$y, main = "Data 1")
+abline(data1c)
+
+plot(data2$x ~ data2$y, main = "Data 2")
+abline(data2c)
+
+plot(data3$x ~ data3$y, main = "Data 3")
+abline(data3c)
+
+plot(data4$x ~ data4$y, main = "Data 4")
+abline(data4c)
+```
+  
+##Data 1  
+It is appropriate to estimate a linear regression model for this data set. It follows a linear pattern when looking at the visualization.  
+  
+##Data 2  
+It is not appropriate to estimate a linear regression model for this data set. It has a parabolic shape rather than linear.  
+  
+##Data 3  
+It is not appropriate to estimate a linear regression model for this data set. It does not follow a linear pattern when looking at the visualization. The outlier pulls it in the opposite direction.  
+  
+##Data 4  
+It is not appropriate to estimate a linear regression model for this data set. It does not follow a linear pattern when looking at the visualization. The outlier pulls it in the opposite direction.  
+  
+It's important to include appropriate visualizations when analyzing data, because they can show you relationships that you might not otherwise notice. By using the summary statistics alone, I never would have known that Data 1, 2, 3, and 4 were so drastically different. Using the visualizations, it's much clearer to me how different they are. Visualizations help the audience understand the data in a more efficient and effective way.
